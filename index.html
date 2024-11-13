@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новая жизнь | Главная тсраница</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles/settings.css">
+    <link rel="stylesheet" href="styles/pages/index.css">
+
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                New Live
+            </a>
+            <ul>
+                <li><a href="index.html">Поиск</a></li>
+                <li><a href="index.html">Регистрация</a></li>
+                <li><a href="index.html">Личный кабинет</a></li>
+                <li><a href="index.html">Добавить</a></li>
+                <li><a href="index.html">Отзывы</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+<!-- Swiper -->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="img/enot1.jpg" alt="">
+        <small>Енот</small>
+        <p>Пушной зверь с тёмно-жёлтым ценным мехом, а также самый мех его.</p>
+        <a href="">Подробнее</a>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="img/enot1.jpg" alt="">
+        <small>Енот</small>
+        <p>Пушной зверь с тёмно-жёлтым ценным мехом, а также самый мех его.</p>
+        <a href="">Подробнее</a>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="img/enot1.jpg" alt="">
+        <small>Енот</small>
+        <p>Пушной зверь с тёмно-жёлтым ценным мехом, а также самый мех его.</p>
+        <a href="">Подробнее</a>
+      </div>
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceVetween: 30,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+</body>
+</html>
