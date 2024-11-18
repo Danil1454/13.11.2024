@@ -122,3 +122,36 @@ button:hover {
     flex-direction: column;
     gap: 16px;
 } 
+/* sub */
+.sub {
+    padding: 96px 0;
+    background-color: aquamarine;
+    color: black;
+}
+.sub label {
+    display: block;
+}
+.sub form {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    max-width: 50%;
+    margin: 0 auto;
+}
+/* footer */
+.footer{
+    padding: 96px 0;
+    background-color: aquamarine;
+    color: black;
+}
+.footer .container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.footer_item ul,
+.footer_item{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
