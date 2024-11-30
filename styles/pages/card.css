@@ -31,6 +31,11 @@ main{
     width: 80%;
     margin: 20px auto;
 }
+
+.info_item{
+  max-width: 100%;
+}
+
 body {
   background: #eee;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;

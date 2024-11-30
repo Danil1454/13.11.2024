@@ -7,7 +7,7 @@
   <title>Новая жизнь | Главная страница</title>
   <link rel="stylesheet" href="library/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="styles/settings.css">
+  <link rel="stylesheet" href="styles/setings.css">
   <link rel="stylesheet" href="styles/pages/index.css">
 
 
@@ -196,6 +196,20 @@
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+      breakpoints:{
+        // от 992 до много будет показывать 3 слайда
+        992:{
+          slidesPerView: 3,
+        },
+        // от 576 до 992 будет показывать 2 слайда
+        576: {
+          slidesPerView: 2
+        },
+        // от 0 до 576 будет показывать 1 слайд 
+        0: {
+          slidesPerView: 1
+        }
+      }
     });
     var reviewsSwiper = new Swiper(".reviews-swiper", {
       slidesPerView: 3,
