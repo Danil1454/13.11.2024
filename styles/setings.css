@@ -55,6 +55,11 @@ table {
 	padding: 0 16px;
 	margin: 0;
 }
+
+.error{
+	color: red;
+	border-bottom:1px solid red;
+}
 /*Телефон (горизонталка)*/
 @media (max-width: 575.98px) {}
 /*Телефон (вертикалка)*/
