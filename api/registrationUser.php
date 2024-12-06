@@ -37,18 +37,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     }
     // Проверка уникальности
     $phone = $formData['phone'];
-    $user = $db->query(
-        "SELECT id FROM users WHERE phone = '$phone' "
-    )->fetchAll();
+    $email = $formData['email'];
+    $user = $db->query("
+       SELECT phone, email FROM users WHERE phone = '$phone' OR email = '$email'
+    ")->fetchAll();
     if (!empty($user)){
+       if ($user[0]['phone'] == $phone) {
         $errors["phone"][] = 'Takoy polzovatel ect';
+    } 
+       if ($user[0]['email'] == $email) {
+        $errors["email"][] = 'Takoy polzovatel ect';
+    } 
     }
+    //Todo: Заполнить таблицу users 2 пользователями
+    //
     if (empty($errors)){
-        $_request = $db-> 
+        $request = $db-> 
         prepare("
-           INSERT INTO 'users'(
-               'name', 'surname', 'email' , 'phone' , 'password' , 'agree'
-               ) VALUES (?,?,?,?,?,?)
+           INSERT INTO `users`(`name`, `surname`, `email`, `phone`, `passwords`, `agree`) VALUES (?,?,?,?,?,?)
         ")->execute([
             $formData['name'],
             $formData['surname'],
@@ -60,6 +66,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
         $_SESSION['register-errors'] = [];
         header('Location: ../login.php');
     }
+
     if (!empty($errors)){
         $_SESSION['register-errors'] = $errors;
         header('Location: ../register.php');

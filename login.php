@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
     </header>
     <main>
         <section>
-            <form>
+            <form action="api/authUser.php" method="POST" class="login-form">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="example">
                 <label for="password">Password</label>
