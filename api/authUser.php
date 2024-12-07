@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
   ]; 
    $errors = [];
    foreach ($formData as $key => $value) {
-    $formData[$key] = htmlspecialcahars ($value);
+    $formData[$key] = htmlspecialchars($value);
    }
    foreach ($fields as $idx => $field) {
     if (array_key_exists($field, $formData)) {
@@ -17,10 +17,41 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
       }  
 
     }
-     $errors[$field][] = 'Поле необходимо заполнить';
+     $errors[$field][] = 'pole neobhodimo zapolnit';
     }
+    // Проверка на совпадение почты 
+    $email = $formData['email'];
+    $user = $db->query("
+       SELECT id FROM users WHERE email = '$email'
+       ")->fetchAll();
+       if (empty($user)){
+           $errors['email'][] = 'User not found';
+       } else {
+    // Проверка на совпадение пароля
+     $password = $formData['password'];
+     $checkUser = $db->query("
+     SELECT id FROM users WHERE email = '$email'AND passwords = '$password'
+     ")->fetchAll();
+     if (empty($checkUser)){
+        $errors['password'][] = 'Wrong password';
+     }
+    }
+    
     if (empty($errors)){
-        echo 123
+        $email = $formData['email'];
+        $password = $formData['password'];
+        $hash = time();
+        $token = base64_encode ("hash=email=$email&password=$password");
+       
+        $db-> query("
+            UPDATE users SET api_token='$token'
+            WHERE email = '$email' AND passwords = '$password'
+        ")->fetchAll();
+
+        $_SESSION['token'] = $token;
+        header("Location: ../profile.php");
+        
+       
     }
     if (!empty($errors)){
         $_SESSION['auth-errors'] = $errors;

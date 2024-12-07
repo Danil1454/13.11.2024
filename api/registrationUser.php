@@ -60,7 +60,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
             $formData['surname'],
             $formData['email'],
             $formData['phone'],
-            password_hash($formData['password'], PASSWORD_BCRYPT),
+            // Поправить 
+            $formData['password'], 
             $formData['agree'] ? 1 : 0,
         ]);
         $_SESSION['register-errors'] = [];

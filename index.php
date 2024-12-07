@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +27,11 @@
         <li><a href="index.html">Личный кабинет</a></li>
         <li><a href="index.html">Добавить</a></li>
         <li><a href="index.html">Отзывы</a></li>
+        <?php 
+            if (array_key_exists ('token', $_SESSION)) {
+               echo "<li> <a href ='api/logoutUser.php' class='reviews'> Выход</a></li>";
+            }
+             ?>
       </ul>
     </div>
   </header>

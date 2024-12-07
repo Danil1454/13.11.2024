@@ -1,34 +1,94 @@
-html, body{
+html, body {
     height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
-body{
+
+body {
     display: flex;
     flex-direction: column;
+    background-color: #f4f4f4; /* Light background color */
 }
-main{
+
+header {
+    padding: 64px 0;
+    background-color: #333; /* Dark header background */
+}
+
+header a {
+    font-size: 32px;
+    text-decoration: none;
+    color: white; /* White text for contrast */
+}
+
+main {
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-header{
-    padding: 64px 0;
-}
-section{
+
+section {
     width: 40%;
+    background-color: white; /* White background for form section */
+    padding: 20px; /* Padding around the section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
-form{
+
+.login-title {
+    text-align: center; /* Centered title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+form {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-header a{
-    font-size: 32px;
-    text-decoration: none;
-    color: black;
 
-    &::before{
-        content: '<';
-        margin: 0 16px 0 0;
-    }
+label {
+    font-weight: bold; /* Bold labels for better visibility */
+}
+
+input[type=email], input[type=password] {
+    padding: 10px; /* Padding inside input fields */
+    border-radius: 4px; /* Rounded corners on inputs */
+    border: 1px solid #ccc; /* Light border */
+}
+
+input[type=email]:focus, input[type=password]:focus {
+    border-color: #007BFF; /* Change border color on focus */
+}
+
+button {
+    padding: 10px; /* Padding inside button */
+    background-color: #007BFF; /* Button color */
+    color: white; /* White text on button */
+    border: none; /* No border on button */
+    border-radius: 4px; /* Rounded corners on button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styles for registration link as a button */
+.register-button {
+    display: inline-block; /* Display as block element */
+    padding: 10px; /* Padding inside button */
+    background-color: #007BFF; /* Same color as login button */
+    color: white; /* White text for contrast */
+    text-align: center; /* Center text inside the button */
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 4px; /* Rounded corners on button */
+}
+
+.register-button:hover {
+    background-color: #0056b3; /* Darker blue on hover for registration button */
+}
+
+.error {
+    color: red; /* Red color for error messages */
 }
