@@ -22,7 +22,7 @@
         New Live
       </a>
       <ul>
-        <li><a href="index.html">Поиск</a></li>
+        <li><a href="poisk.php">Поиск</a></li>
         <li><a href="register.php">Регистрация</a></li>
         <li><a href="index.html">Личный кабинет</a></li>
         <li><a href="index.html">Добавить</a></li>
@@ -182,11 +182,11 @@
       <div class="footer_item">
         <ul>
           <li><a href="index.html">Главная</a></li>
-          <li><a href="index.html">Регистрация</a></li>
-          <li><a href="index.html">Авторизация</a></li>
+          <li><a href="register.php">Регистрация</a></li>
+          <li><a href="login.php">Авторизация</a></li>
           <li><a href="index.html">Личный кабинет</a></li>
-          <li><a href="index.html">Найдено животное</a></li>
-          <li><a href="index.html">Поиск</a></li>
+          <li><a href="add.php">Найдено животное</a></li>
+          <li><a href="poisk.php">Поиск</a></li>
         </ul>
       </div>
     </div>
