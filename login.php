@@ -1,4 +1,24 @@
-<?php session_start();?>
+<?php session_start();
+
+// Проверка аутентификации
+
+include_once('api/db.php');
+
+if (array_key_exists('token', $_SESSION)){
+    $token = $_SESSION['token'];
+    $userId = $db->query("
+        SELECT id FROM users WHERE api_token = '$token'
+        ")->fetchAll();
+    
+        if(!empty ($userId)){
+        header('Location: profile.php');
+    }    
+} 
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>

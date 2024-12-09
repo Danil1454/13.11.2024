@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 04 2024 г., 06:14
+-- Время создания: Дек 09 2024 г., 03:23
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -35,8 +35,17 @@ CREATE TABLE `users` (
   `phone` varchar(256) NOT NULL,
   `passwords` varchar(256) NOT NULL,
   `agree` tinyint(1) NOT NULL,
-  `api_token` varchar(256) DEFAULT NULL
+  `api_token` varchar(256) DEFAULT NULL,
+  `type` varchar(256) DEFAULT 'default'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `surname`, `email`, `phone`, `passwords`, `agree`, `api_token`, `type`) VALUES
+(1, 'danil', 'slesarenko', 'kriirwrrju45454@gmail.com', '+79833083076', '1234', 1, 'aGFzaD1lbWFpbD1rcmlpcndycmp1NDU0NTRAZ21haWwuY29tJnBhc3N3b3JkPTEyMzQ=', 'mod'),
+(2, 'tany', 'karpenko', 'teenkan@gmail.com', '+79831309910', '54321', 2, NULL, 'default');
 
 --
 -- Индексы сохранённых таблиц
@@ -58,7 +67,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

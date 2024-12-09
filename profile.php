@@ -1,4 +1,23 @@
-<?php session_start();?>
+<?php session_start();
+
+// Проверка аутентификации
+
+include_once('api/db.php');
+
+if (array_key_exists('token', $_SESSION)){
+    $token = $_SESSION['token'];
+    $userId = $db->query("
+        SELECT id FROM users WHERE api_token = '$token'
+        ")->fetchAll();
+    
+    if(empty ($userId)){
+        unset($_SESSION['token']);
+        header('Location: login.php');
+    }    
+} else {
+    header('Location: login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +32,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#">Главная</a>
+                <a href="index.php">Главная</a>
                 <a href="#">Объявления</a>
                 <a href="#">Контакты</a>
             </nav>
