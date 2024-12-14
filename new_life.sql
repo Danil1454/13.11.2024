@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 11 2024 г., 10:50
+-- Время создания: Дек 14 2024 г., 05:17
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -34,15 +34,17 @@ CREATE TABLE `posts` (
   `description` varchar(256) DEFAULT NULL,
   `mark` varchar(256) DEFAULT NULL,
   `address` varchar(256) DEFAULT NULL,
-  `date_found` date DEFAULT NULL
+  `date_found` date DEFAULT NULL,
+  `status` varchar(256) DEFAULT 'mod'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `posts`
 --
 
-INSERT INTO `posts` (`id`, `user_id`, `type_animal`, `description`, `mark`, `address`, `date_found`) VALUES
-(1, 1, 'cat', 'cat good', 'osheinik', 'cats hous', '0000-00-00');
+INSERT INTO `posts` (`id`, `user_id`, `type_animal`, `description`, `mark`, `address`, `date_found`, `status`) VALUES
+(1, 1, 'cat', 'cat good', 'osheinik', 'cats hous', '0000-00-00', 'mod'),
+(2, 2, 'dog', 'good dog', 'osheinik', 'dogs hous', '0000-00-00', 'active');
 
 -- --------------------------------------------------------
 

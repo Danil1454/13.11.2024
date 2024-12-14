@@ -101,18 +101,20 @@ echo json_encode($user);
                       </div>
                 </div>
                 <div class="info_item">
-                        <time datetime="29-11-2024">29.11.2024</time>
-                        <h2>Кот</h2>
-                        <p>
-                            Кировский
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta ullam et voluptatum beatae, veniam vel explicabo obcaecati excepturi repudiandae est omnis quos doloribus blanditiis aperiam ipsa cumque in. Facilis, voluptatum.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt velit tempore molestias nihil, ut dolorum! Consectetur facilis, excepturi voluptatem quasi obcaecati neque incidunt nemo tenetur voluptates voluptatibus alias fugiat repellendus.
-                        </p>
-                        <p>Иванов Иван</p>
-                        <a href="tel:89231898840">8 (923) 189 88-40</a>
-                        <a href="mailto:example@mail.ru">example@mail.ru</a>
+                        <time datetime="2024-29-11">
+                          <?php echo $post[0]['date_found']; ?>
+                        </time>
+                        <small>
+                          <?php echo $post[0]['status'];?>
+                        </small>
+                        <h2>
+                          <?php echo $post[0]['type_animal'];?>
+                        </h2>
+                        <p><?php echo $post[0]['address'];?></p>
+                        <p><?php echo $post[0]['description'];?></p>
+                        <p><?php echo $user[0]['name'] . " " . $user[0]['surname'] ?></p>
+                        <?php $phone = $user[0]['phone']; echo "<a href='tel:$phone'>$phone</a>"?>
+                        <?php $email = $user[0]['email']; echo "<a href='mailto:$email'>$email</a>"?>
                 </div>
             </div>
         </section>

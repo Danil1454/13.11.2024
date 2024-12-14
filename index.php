@@ -1,7 +1,13 @@
-<?php session_start();?>
+<?php session_start();
+include_once 'api/db.php';
+$posts = $db
+     ->query("SELECT * FROM posts WHERE status = 'active' LIMIT 6")
+     ->fetchAll();
+echo json_encode ($posts);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +16,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="styles/setings.css">
   <link rel="stylesheet" href="styles/pages/index.css">
-
-  
 </head>
 
 <body>
@@ -41,27 +45,21 @@
         <!-- Swiper -->
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="img/enot1.jpg" alt="">
-              <small>Енот</small>
-              <p>Пушной зверь с тёмно-жёлтым ценным мехом, а также самый мех его.</p>
-              <a href="">Подробнее</a>
-            </div>
-
-            <div class="swiper-slide">
-              <img src="img/enot1.jpg" alt="">
-              <small>Енот</small>
-              <p>Пушной зверь с тёмно-жёлтым ценным мехом, а также самый мех его.</p>
-              <a href="">Подробнее</a>
-            </div>
-
-            <div class="swiper-slide">
-              <img src="img/enot1.jpg" alt="">
-              <small>Енот</small>
-              <p>Пушной зверь с тёмно-жёлтым ценным мехом, а также самый мех его.</p>
-              <a href="">Подробнее</a>
-            </div>
-
+            <?php 
+            foreach ($posts as $key => $value){
+              $type = $value['type_animal'];
+              $desc = $value['description'];
+              $id = $value['id'];
+              echo "          
+                  <div class='swiper-slide'>
+                    <img src='img/enot1.jpg'>
+                    <small>$type</small>
+                    <p>$desc</p>
+                    <a href='Card.php?id=$id'>Подробнее</a>
+                  </div>
+                  ";
+            }
+            ?>
           </div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>

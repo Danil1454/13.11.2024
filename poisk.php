@@ -8,7 +8,8 @@ if (!empty($searchParams)){
 
     $posts = $db->query("
         SELECT * FROM posts WHERE 
-        type_animal = '$animalType' OR address = '$address'
+        (type_animal = '$animalType' OR address = '$address')
+        AND (status = 'active')
         ")->fetchAll();
     }      
 ?>
