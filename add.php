@@ -36,12 +36,7 @@ if (array_key_exists('token', $_SESSION)){
         <section class="add">
             <div class="container">
                 <h1>Добавить информацию о животном</h1>
-                <form>
-                    <label for="phone">Номер телефона</label>
-                    <input type="tel" name="phone" id="phone" required>
-
-                    <label for="email">Почта</label>
-                    <input type="email" name="email" id="email" required>
+                <form method="POST" action="api/addPost.php">
 
                     <label for="type">Тип животного</label>
                     <select name="type" id="type" required>
@@ -50,29 +45,21 @@ if (array_key_exists('token', $_SESSION)){
                         <option value="dog">Собака</option>
                     </select>
 
-                    <label for="photo">Фотографии животного</label>
-                    <input type="file" name="photo" id="photo" accept="image/*">
-
                     <label for="desc">Дополнительная информация</label>
                     <textarea name="desc" id="desc" rows="4"></textarea>
 
                     <label for="mark">Клеймо (если есть)</label>
                     <input type="text" name="mark" id="mark">
 
-                    <label for="place">Место нахождения</label>
-                    <select name="place" id="place">
-                        <option value="">Выберите район</option>
-                        <option value="0">Кировский р-н</option>
-                        <option value="1">Центр</option>
+                    <select name="address" id="place">
+                        <option value="Karasuk">Карасук</option>
+                        <option value="Center">Центр</option>
                     </select>
 
                     <label for="date">Дата</label>
                     <input type="date" name="date" id="date">
-
-                    <label for="agree">
-                        <input type="checkbox" name="agree" id="agree" required>
-                        Согласие на обработку персональных данных
-                    </label>
+ 
+                    <button type="submit">Добавить</button>
 
                     <button type="submit">Отправить</button>
                 </form>

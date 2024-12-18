@@ -52,7 +52,9 @@ if (array_key_exists('token', $_SESSION)){
                         <li><i class="fa fa-paw" aria-hidden="true"></i> Питомцев: 5</li>
                         <li><i class="fa fa-table" aria-hidden="true"></i> Дата регистрации: 13.11.2024 (10 дней)</li>
                     </ul>
-                    <button class="logout-button">Выход</button>
+                    <a href="api/logoutUser.php" class="logout-btn"> 
+                        <i class="fa fa-sign-out"></i> Выйти
+                   </a>
                 </div>
             </div>
         </section>

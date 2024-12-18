@@ -69,9 +69,9 @@ echo json_encode ($posts);
     </section>
     <section class="short-search">
       <div class="container">
-        <form>
+        <form method="GET" action="poisk.php">
           <label for="type-animal">Вид животного</label>
-          <select name="type-animal" id="type-animal">
+          <select name="animal-type" id="type-animal">
             <option value="cat">Кот</option>
             <option value="dog">Собака</option>
           </select>
@@ -98,14 +98,13 @@ echo json_encode ($posts);
     <section class="search">
       <div class="container">
         <div class="search_iten">
-          <form>
+          <form method="GET" action="poisk.php">
             <label for="place">Район</label>
-            <select name="place" id="place">
-              <option value="0">Правый берег</option>
-              <option value="1">Левый берег</option>
+            <select name="address" id="place">
+              <option value="dog hous">dog hous</option>
             </select>
             <label for="animal">Вид животного</label>
-            <select name="animal" id="animal">
+            <select name="animal-type" id="animal">
               <option value="cat">Кот</option>
               <option value="dog">Собака</option>
               <option value="rabbit">Кролик</option>
